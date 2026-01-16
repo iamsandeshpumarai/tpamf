@@ -6,7 +6,7 @@ import SubHeader from "./Component/SubHeader"
 import Introduction from "./Component/Introudction/Introduction"
 import Menu from "./Component/Menu"
 import Primeminister from "./Component/Introudction/Primeminister"
-
+import ScrolltoTop from './Component/ScrolltoTop'
 import ImportantWork from "./Component/Introudction/ImportantWork"
 import Timeline from "./Component/Introudction/Timeline"
 import IntroOutlet from "./Component/Outlet/IntroOutlet"
@@ -36,6 +36,7 @@ import GalleryOutlet from "./Component/Outlet/GalleryOutlet"
 import ImageCollection from "./Component/Gallery.jsx/ImageCollection"
 import VideoCollection from "./Component/Gallery.jsx/VideoCollection"
 import ContactPage from "./Component/Page/Contact"
+import ScrollTop from "./Component/ScrollTop"
 
 
 const App = () => {
@@ -44,7 +45,8 @@ const App = () => {
     <SubHeader/>
 <Header/>
 <Menu/>
-
+<ScrolltoTop/>
+<ScrollTop/>
     <Routes>
 
       
