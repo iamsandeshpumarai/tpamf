@@ -1,32 +1,26 @@
 import React, { useState } from 'react';
-import backgroundImage from '../assets/images/bg-image/row-bgimage-1.jpg'
-import ResearchedBook1 from '../assets/images/portfolio/publication-01.jpg'
-import ResearchedBook2 from '../assets/images/portfolio/publication-02.jpg'
-import ResearchedBook3 from '../assets/images/portfolio/publication-03.jpg'
-import RelatedBook1 from '../assets/images/portfolio/04.jpg'
-import RelatedBook2 from '../assets/images/portfolio/05.jpg'
-import RelatedBook3 from '../assets/images/portfolio/06.jpg'
-import OtherBook from '../assets/images/portfolio/07.jpg'
-import OtherBook2 from '../assets/images/portfolio/08.jpg'
-import OtherBook3 from '../assets/images/portfolio/09.jpg'
+import backgroundImage from '../../assets/images/bg-image/row-bgimage-1.jpg'
+import ResearchedBook1 from '../../assets/images/portfolio/publication-01.jpg'
+import ResearchedBook2 from '../../assets/images/portfolio/publication-02.jpg'
+import ResearchedBook3 from '../../assets/images/portfolio/publication-03.jpg'
 const PublicationSection = () => {
-  const [activeTab, setActiveTab] = useState('Researched Books');
+  const [activeTab, setActiveTab] = useState('अनुसन्धात्मक');
 
   const books = {
-    "Researched Books": [
+    "अनुसन्धात्मक": [
       { id: 1, title: "Internal and International Migration in Nepal", img: ResearchedBook1 },
       { id: 2, title: "Efforts at Promotion of Women in Nepal", img: ResearchedBook2 },
       { id: 3, title: "भावी संबिधान", img: ResearchedBook3 },
     ],
-    "TPA Related Books": [
-      { id: 4, title: "Corporate Consultancy Solution", img: RelatedBook1 },
-      { id: 5, title: "Business Planning", img: RelatedBook2 },
-      { id: 6, title: "Business Management", img: RelatedBook3 },
+    "टंकप्रसादसंग सम्बन्धित": [
+      { id: 4, title: "Living Martyrs", img: "https://tp-acharya.terracecafe.com.np/upload/images/publications/17121249588%20Living%20Martyrs.jpg" },
+      { id: 5, title: "अचार्यसिता केहि क्षेन", img: "https://tp-acharya.terracecafe.com.np/upload/images/publications/17121238177%20Acharyasita%20Kehi%20Kshyan.jpg" },
+      { id: 6, title: "टंकप्रसाद आचार्य स्मृति ग्रन्थ", img: "https://tp-acharya.terracecafe.com.np/upload/images/publications/17121237016%20Tanka%20Prasad%20Acharya%20Smriti%20Grantha.jpg" },
     ],
-    "Other Books": [
-      { id: 7, title: "Financial Forecast", img: OtherBook },
-      { id: 8, title: "Marketing Strategy", img: OtherBook2 },
-      { id: 9, title: "Business Solutions", img: OtherBook3 },
+    "इतिहास, रास्त्रियता लगायत अन्य": [
+      { id: 7, title: "राष्ट्र र राष्ट्रियता", img: "https://tp-acharya.terracecafe.com.np/upload/images/publications/17121280867%20Rastriya%20and%20Rastriya.jpg" },
+      { id: 8, title: "१९९७ - २०१७ एक अवोलोकन", img: "https://tp-acharya.terracecafe.com.np/upload/images/publications/17121280326%201997%20to%202017%20Arbinda%20Rimal.jpg" },
+      { id: 9, title: "नेपाल थर्कैदिने १९ दिन", img: "https://tp-acharya.terracecafe.com.np/upload/images/publications/17121279325%20Nepal%20Tharkaidine%2019%20din.jpg" },
     ]
   };
 
@@ -45,10 +39,10 @@ const PublicationSection = () => {
         {/* Section Header */}
         <div className="mb-12 text-center flex justify-center items-center flex-col ">
           <h5 className=" text-white font-bold tracking-widest text-sm uppercase mb-3">
-            Publication
+            प्रकाशित कृति
           </h5>
           <h2 className="text-3xl md:text-4xl font-bold max-w-2xl   leading-tight text-center">
-            Books on TPA and his remarkable legacy and historical contributions
+            टंकप्रसाद आचार्य र उहाँको विशिष्ट विरासत एवं ऐतिहासिक योगदानका बारेमा लेखिएको पुस्तक
           </h2>
           <div className='bg-[#273A83] w-12 mt-5 h-[5px]'></div>
         </div>
@@ -71,7 +65,7 @@ const PublicationSection = () => {
 
         {/* Content Area - Grid of Books */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {books[activeTab].map((book) => (
+          {books[activeTab]?.map((book) => (
             <div 
               key={book.id} 
               className="group relative bg-gray-900 rounded-sm overflow-hidden shadow-2xl aspect-[3/4]"

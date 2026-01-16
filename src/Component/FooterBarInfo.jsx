@@ -5,19 +5,19 @@ const FooterInfoBar = () => {
   const contactInfo = [
     {
       id: 1,
-      title: "Our Address",
+      title: "कुपन्डोल, काठमाडौँ",
       desc: "Kupondole, Lalitpur, Nepal",
       icon: <MapPin className="text-[#273a83] mb-2" size={24} />,
     },
     {
       id: 2,
-      title: "Call Us",
-      desc: "+९७७-०१५४२२६७९",
+      title: "सम्पर्क नम्बर",
+      desc: "+९७७०१५४२२६७९",
       icon: <Phone className="text-[#273a83] mb-2" size={24} />,
     },
     {
       id: 3,
-      title: "Email Us",
+      title: "इमेल ठेगाना",
       desc: "tpamf93@gmail.com",
       icon: <Mail className="text-[#273a83] mb-2" size={24} />,
     },

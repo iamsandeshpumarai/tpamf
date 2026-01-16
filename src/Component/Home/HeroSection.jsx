@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import Slider1 from '../assets/images/slides/slider-mainbg-001.jpg';
-import Slider2 from '../assets/images/slides/slider-mainbg-003.jpg';
+import Slider1 from '../../assets/images/slides/slider-mainbg-001.jpg';
+import Slider2 from '../../assets/images/slides/slider-mainbg-003.jpg';
 
 const slides = [
   {

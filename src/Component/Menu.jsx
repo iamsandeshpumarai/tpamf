@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const Menu = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -6,44 +7,63 @@ const Menu = () => {
   const [openMobileSubmenu, setOpenMobileSubmenu] = useState(null);
 
   const NAV_DATA = [
-    { label: "Home", href: "index.html" },
+    { label: "गृहपृष्ठ", href: "/" },
     { 
-      label: "About TPA", 
+      label: "टंकप्रसाद आचार्य", 
       submenu: [
-        { label: "Introduction", href: "#" },
-        { label: "Timeline", href: "#" },
-        { label: "Ideology", href: "#" },
-        { label: "Speeches", href: "#" },
-        { label: "Prime Ministry", href: "#" },
-        { label: "Achievements", href: "#" },
+        { label: "टंकप्रसाद आचार्य", href: "/tankaprasadacharya" },
+        { label: "संक्षिप्त जिवनी", href: "/tankaprasadacharya/time-line" },
+        { label: "प्रधानमन्त्रित्वकाल", href: "/tankaprasadacharya/primeminister-period" },
+        { label: "मुख्य मुख्य कामहरू", href: "/tankaprasadacharya/important-works" },
+        
+        
       ]
     },
     { 
-      label: "About Us", 
+      label: "टंकप्रसाद आचार्य स्मृति प्रतिष्ठान", 
       submenu: [
-        { label: "Introduction", href: "#" },
-        { label: "Board", href: "#" },
-        { label: "Management", href: "#" },
-        { label: "Library", href: "#" },
-        { label: "Museum", href: "#" },
+        { label: "परिचय", href: "/organization" },
+        { label: "उद्देश्य", href: "/organization/goals" },
+        { label: "कार्यसमिति", href: "/organization/all-teams" },
+        { label: "व्यबस्थापन", href: "/organization/management" },
+        { label: "पुस्तकालय", href: "/organization/library" },
+        { label: "सङ्ग्रहालय", href: "/organization/museum" },
       ]
     },
     { 
-      label: "Publication", 
+      label: "प्रकासन", 
       submenu: [
-        { label: "Researched Books", href: "#" },
-        { label: "TPA Related Books", href: "#" },
-        { label: "Other Books", href: "#" },
+        { label: "अनुसन्धात्मक", href: "/category" },
+        { label: "टंकप्रसादसंग सम्बन्धित", href: "/category/TPA-Related" },
+        { label: "इतिहास, रास्त्रियता लगायत अन्य", href: "/category/History-and-other" },
       ]
     },
     { 
-      label: "Activities", 
+      label: "गतिविधीहरु", 
       submenu: [
-        { label: "Regular Program", href: "#" },
-        { label: "Scholarship", href: "#" },
-        { label: "Social Issues", href: "#" },
+        { label: "नियमित कार्यक्रम", href: "/activity" },
+        { label: "छात्रवृति र बिद्यालय भौतिक संरचना निर्माण एबम मर्मत", href: "/activity/scholarship-and-infrastructure" },
+        { label: "समसामयिक बिषयमा छलफल कार्यक्रम", href: "/activity/contemporary-discussions" },
       ]
-    }
+    },
+    { 
+      label: "सुचना/विज्ञप्ति", 
+      submenu: [
+        { label: "विज्ञप्ति", href: "/notification" },
+        { label: "सुचना", href: "/notification/notice" },
+        
+      ]
+    },
+   
+    { 
+      label: "ग्यालेरी", 
+      submenu: [
+        { label: "फोटोहरु", href: "/gallery" },
+        { label: "भिडियोहरु", href: "/gallery/videos" },
+  
+      ]
+    },
+    
   ];
 
   const toggleMobileSubmenu = (idx) => {
@@ -78,7 +98,7 @@ const Menu = () => {
                         </svg>
                       </span>
                     ) : (
-                      <a href={item.href}>{item.label}</a>
+                      <Link to={item.href}>{item.label}</Link>
                     )}
                   </div>
 
@@ -106,9 +126,9 @@ const Menu = () => {
 
           {/* 3. Right Side: Contact Button */}
           <div className="flex-shrink-0">
-            <a href="contact.html" className="text-black border border-black hover:text-white px-6 py-2.5 font-bold hover:bg-black transition-all duration-500 shadow-md active:scale-95 inline-block">
-              Contact Us
-            </a>
+            <Link to="contact.html" className="text-black border border-black hover:text-white px-6 py-2.5 font-bold hover:bg-black transition-all duration-500 shadow-md active:scale-95 inline-block">
+              सम्पर्क
+            </Link>
           </div>
 
         </div>
@@ -123,13 +143,13 @@ const Menu = () => {
                 className="flex justify-between items-center py-2 cursor-pointer"
                 onClick={() => item.submenu ? toggleMobileSubmenu(idx) : null}
               >
-                <a 
-                  href={item.submenu ? "#" : item.href} 
+                <Link
+                  to={item.submenu ? "#" : item.href} 
                   className="text-lg font-bold text-[#193283]"
                   onClick={(e) => item.submenu && e.preventDefault()}
                 >
                   {item.label}
-                </a>
+                </Link>
                 {item.submenu && (
                   <svg 
                     className={`w-5 h-5 transition-transform duration-300 ${openMobileSubmenu === idx ? 'rotate-180' : ''}`} 

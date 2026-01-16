@@ -1,3 +1,4 @@
+import { Key } from 'lucide-react';
 import { 
   FaPhoneAlt, 
   FaEnvelope, 
@@ -6,17 +7,17 @@ import {
   FaInstagram, 
   FaLinkedinIn 
 } from 'react-icons/fa';
-
+import { Link } from 'react-router-dom';
 
 const SubHeader = () => {
   
   const phoneData =  {category:"phone",
-      data:"+९७७-०१५४२२६७९",
+      data:"+ ९७७-०१५४२२६७९",
       phoneLogo:<FaPhoneAlt size="10px"/>
     }
     const emailData = {category:"email",
-       data:"contact@tpamf.org.np",
-       socialmedialogo:[<FaFacebookF size="13px"/>, <FaTwitter size="13px"/>,<FaInstagram size="13px"/>,<FaLinkedinIn size="13px"/>]
+       data:"tpamf93@gmail.com",
+       socialmedialogo:[ {link:"#",logo: <FaFacebookF size="13px"/>}, {link:"#",logo:<FaTwitter size="13px"/>}, {link:"#",logo:<FaInstagram size="13px"/>},{logo:<FaLinkedinIn size="13px"/>,link:"#" }]
 
     }
 
@@ -35,8 +36,8 @@ const SubHeader = () => {
         <p className='text-[13px] mr-12 p-1'>Email: <span className='hover:text-[#193283] cursor-pointer transition-colors duration-300 ease-in-out'>{emailData.data}</span> </p> 
         <div className='flex'>
           {
-          emailData.socialmedialogo.map((logo)=>{
-            return <p className='p-2 hover:text-[#193283] cursor-pointer transition-colors duration-300 ease-in-out'>{logo}</p>
+          emailData.socialmedialogo.map((logo,index)=>{
+            return <Link to={logo.link} key={index} className='p-2 hover:text-[#193283] cursor-pointer transition-colors duration-300 ease-in-out'>{logo?.logo}</Link>
           })
         }
         </div>

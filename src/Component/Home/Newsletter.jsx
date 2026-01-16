@@ -35,7 +35,7 @@ const NewsletterSubscription = () => {
                     name="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    placeholder="Your Email Address.."
+                    placeholder="तपाईंको इमेल राख्नुहोस्"
                     required
                     className="w-full py-3 px-4 bg-transparent text-[#212529] text-sm outline-none placeholder:text-[#8d9297]"
                   />

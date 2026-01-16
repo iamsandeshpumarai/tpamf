@@ -1,4 +1,4 @@
-import GoalPicture from '../assets/images/goal-side.jpg'
+import GoalPicture from '../../assets/images/goal-side.jpg'
 
 const OurGoals = () => {
   return (

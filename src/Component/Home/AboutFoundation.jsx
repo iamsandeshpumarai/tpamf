@@ -1,7 +1,8 @@
 import React from 'react';
-import AboutImage from '../assets/images/single-img-six.png';
+// import AboutImage from '../assets/images/single-img-six.png';
 
 const AboutFoundation = () => {
+  const aboutimage = "https://tp-acharya.terracecafe.com.np/upload/images/settings/1712294498pratisthan.jpg"
   return (
     <section className="py-20 bg-[#f3f7f9] overflow-hidden font-['Poppins',_sans-serif]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -47,7 +48,7 @@ const AboutFoundation = () => {
               <div className="relative z-10 overflow-hidden rounded-sm shadow-2xl bg-white p-2">
                 <img 
                   className="w-full h-auto object-cover transform transition-transform duration-1000 group-hover:scale-105" 
-                  src={AboutImage} 
+                  src={aboutimage} 
                   alt="Late Tanka Prasad Acharya" 
                 />
               </div>
