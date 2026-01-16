@@ -126,7 +126,7 @@ const Menu = () => {
 
           {/* 3. Right Side: Contact Button */}
           <div className="flex-shrink-0">
-            <Link to="contact.html" className="text-black border border-black hover:text-white px-6 py-2.5 font-bold hover:bg-black transition-all duration-500 shadow-md active:scale-95 inline-block">
+            <Link to="/contact" className="text-black border border-black hover:text-white px-6 py-2.5 font-bold hover:bg-black transition-all duration-500 shadow-md active:scale-95 inline-block">
               सम्पर्क
             </Link>
           </div>

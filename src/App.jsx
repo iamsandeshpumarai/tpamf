@@ -35,6 +35,7 @@ import NoticeOutlet from "./Component/Outlet/NoticeOutlet"
 import GalleryOutlet from "./Component/Outlet/GalleryOutlet"
 import ImageCollection from "./Component/Gallery.jsx/ImageCollection"
 import VideoCollection from "./Component/Gallery.jsx/VideoCollection"
+import ContactPage from "./Component/Page/Contact"
 
 
 const App = () => {
@@ -99,6 +100,8 @@ const App = () => {
 <Route path='videos' element={<VideoCollection/>}/>
 </Route>
 
+{/* contact route  */}
+<Route path='/contact' element={<ContactPage/>}/>
     </Routes>
     <Footer/>
     </>
