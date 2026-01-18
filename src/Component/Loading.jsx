@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import LoadingImage from "../assets/LoaderImage/LoadingIMage.png";
+import LoadingImage from "../assets/LoaderImage/Loadingimage.png";
 import "./loader.css";
 
 const LoadingScreen = () => {
