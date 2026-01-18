@@ -37,6 +37,11 @@ import ImageCollection from "./Component/Gallery.jsx/ImageCollection"
 import VideoCollection from "./Component/Gallery.jsx/VideoCollection"
 import ContactPage from "./Component/Page/Contact"
 import ScrollTop from "./Component/ScrollTop"
+import CompanyOutlet from "./Component/Outlet/CompanyOutlet"
+import OrganizationalProfile from "./Component/Company/OrganizationalProfile"
+import WorkshopTable from "./Component/Company/Workshopandseminar"
+import ProfessionalRostrum from "./Component/Company/ProfessionalRostrum"
+import BoardMembers from "./Component/Company/Currentboardandadvisory"
 
 
 const App = () => {
@@ -104,6 +109,15 @@ const App = () => {
 
 {/* contact route  */}
 <Route path='/contact' element={<ContactPage/>}/>
+
+{/* foundation route  */}
+<Route path='company' element={<CompanyOutlet/>}>
+<Route index element={<OrganizationalProfile/>} />
+<Route path='workshop-and-seminar' element={<WorkshopTable/>} />
+<Route path='Professional-rostrum' element={<ProfessionalRostrum/>} />
+<Route path='current-board-and-advisory-panel-members' element={<BoardMembers/>} />
+
+</Route>
     </Routes>
     <Footer/>
     </>

@@ -6,8 +6,10 @@ import { Activity, ArrowRight, ExternalLink } from 'lucide-react';
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
+import { useNavigate } from 'react-router-dom';
 
 const BlogSection = () => {
+const navigate = useNavigate()
   const posts = [
     {
       id: 1,
@@ -68,10 +70,12 @@ const BlogSection = () => {
         >
           {posts.map((post) => (
             <SwiperSlide key={post.id} className="!h-auto"> {/* !h-auto allows slides to stretch equally */}
-              <div className="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 flex flex-col h-full border border-gray-100">
+              <div onClick={()=>{
+                  navigate(`/activity/activities/${encodeURIComponent(post.title)}`)
+                }} className="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 flex flex-col h-full border border-gray-100">
                 
                 {/* Image Wrapper - Fixed Aspect Ratio */}
-                <div className="relative overflow-hidden aspect-[16/10] shrink-0">
+                <div  className="relative overflow-hidden aspect-[16/10] shrink-0">
                   <img 
                     src={post.image} 
                     alt={post.title}

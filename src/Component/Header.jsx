@@ -2,13 +2,15 @@ import React from 'react'
 import imageLogo from '../assets/images/logo.png'
 import headerPicture from '../assets/images/header-right-img.jpg'
 import './Header.css'
+import { useNavigate } from 'react-router-dom'
 const Header = () => {
+    const navigate =  useNavigate()
     return (
         <>
         <header className='w-full h-[16vh] flex flex-row justify-evenly items-center px-4'>
             
             {/* 1. Logo */}
-            <div className='md:flex-shrink-0 md:block hidden'>
+            <div onClick={()=>{navigate('/')}} className='cursor-pointer md:flex-shrink-0 md:block hidden'>
                 <img src={imageLogo} className='w-28 h-auto' alt="Logo" />
             </div>
 

@@ -5,7 +5,8 @@ import {
   FaFacebookF, 
   FaTwitter, 
   FaInstagram, 
-  FaLinkedinIn 
+  
+  FaYoutube
 } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
@@ -17,7 +18,7 @@ const SubHeader = () => {
     }
     const emailData = {category:"email",
        data:"tpamf93@gmail.com",
-       socialmedialogo:[ {link:"#",logo: <FaFacebookF size="13px"/>}, {link:"#",logo:<FaTwitter size="13px"/>}, {link:"#",logo:<FaInstagram size="13px"/>},{logo:<FaLinkedinIn size="13px"/>,link:"#" }]
+       socialmedialogo:[ {link:"https://www.facebook.com/tpamf.baneshwor/",logo: <FaFacebookF size="13px"/>}, {link:"https://x.com/Tanka_memorial",logo:<FaTwitter size="13px"/>}, {link:"https://instagram.com",logo:<FaInstagram size="13px"/>},{logo:<FaYoutube size="13px"/>,link:"https://www.youtube.com/channel/UCCBIKK5fcYLpyCo72kOfWwg" }]
 
     }
 

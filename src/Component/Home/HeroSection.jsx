@@ -7,19 +7,19 @@ const slides = [
   {
     id: 1,
     bgImage: Slider1,
-    subtitle: "HELPING YOU TO",
-    title: "Fastest Way to",
-    highlight: "Achieve your Goal",
-    description: "Comprehensive financial advice and financial services that are tailored to meet your individual needs.",
+    subtitle: "HONOURING THE FATHER OF DEMOCRACY",
+    title: "A Legacy of Courage &",
+    highlight: "Unyielding Freedom",
+    description: "Commemorating the life of Late Tanka Prasad Acharya and his struggle to establish social justice and democratic values in Nepal.",
     align: "left"
   },
   {
     id: 2,
     bgImage: Slider2,
-    subtitle: "GREAT EXPERIENCE",
-    title: "We Provide",
-    highlight: "Financial Planning",
-    description: "Create a refreshing customer experience that's free of convexity and confusion.",
+    subtitle: "EMPOWERING THE FUTURE",
+    title: "Education for the",
+    highlight: "Disadvantaged Groups",
+    description: "Continuing the vision of Tanka Prasad and Rewanta Kumari by supporting the education of underprivileged children across the nation.",
     align: "right-ish" // Custom alignment for Slider 2
   }
 ];
@@ -125,7 +125,7 @@ const HeroSlider = () => {
                     className="text-left text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight"
                   >
                     {slides[current].title} <br />
-                    <span className="text-[#273a83]">{slides[current].highlight}</span>
+                    <p className="text-[#273a83] m-2 ">{slides[current].highlight}</p>
                   </motion.h1>
                 </>
               )}
@@ -142,19 +142,19 @@ const HeroSlider = () => {
               </motion.p>
 
               {/* Buttons (Popping from Bottom) */}
-              <motion.div 
+              {/* <motion.div 
                 variants={popUpVars}
                 initial="initial"
                 animate="animate"
                 className="mt-10 flex flex-wrap gap-4 items-center"
               >
                 <a href="#" className="bg-[#273a83] text-white px-6 md:px-8 py-2 md:py-4 rounded-sm font-bold text-xs uppercase tracking-wider hover:bg-black transition-all">
-                  Our Services
+                  About Us
                 </a>
                 <a href="#" className="border-2 border-white text-white px-6 md:px-8 py-2 md:py-4 rounded-sm font-bold text-xs uppercase tracking-wider hover:bg-white hover:text-black transition-all">
                   Contact Us
                 </a>
-              </motion.div>
+              </motion.div> */}
             </div>
           </div>
         </motion.div>

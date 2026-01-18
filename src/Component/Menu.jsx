@@ -7,59 +7,63 @@ const Menu = () => {
   const [openMobileSubmenu, setOpenMobileSubmenu] = useState(null);
 
   const NAV_DATA = [
-    { label: "गृहपृष्ठ", href: "/" },
-    { 
-      label: "टंकप्रसाद आचार्य", 
+    // {
+    //   label:"Home",href:"/"
+
+    // },
+
+       { 
+      label: "About TPA", 
       submenu: [
-        { label: "टंकप्रसाद आचार्य", href: "/tankaprasadacharya" },
-        { label: "संक्षिप्त जिवनी", href: "/tankaprasadacharya/time-line" },
-        { label: "प्रधानमन्त्रित्वकाल", href: "/tankaprasadacharya/primeminister-period" },
-        { label: "मुख्य मुख्य कामहरू", href: "/tankaprasadacharya/important-works" },
+        { label: "Introduction", href: "/tankaprasadacharya" },
+        { label: "Timeline", href: "/tankaprasadacharya/time-line" },
+        { label: "Prime ministership", href: "/tankaprasadacharya/primeminister-period" },
+        { label: "Achievements", href: "/tankaprasadacharya/important-works" },
         
         
       ]
     },
     { 
-      label: "टंकप्रसाद आचार्य स्मृति प्रतिष्ठान", 
+      label: "About Us", 
       submenu: [
-        { label: "परिचय", href: "/organization" },
-        { label: "उद्देश्य", href: "/organization/goals" },
-        { label: "कार्यसमिति", href: "/organization/all-teams" },
-        { label: "व्यबस्थापन", href: "/organization/management" },
-        { label: "पुस्तकालय", href: "/organization/library" },
-        { label: "सङ्ग्रहालय", href: "/organization/museum" },
+        { label: "Introduction", href: "/organization" },
+        { label: "Goal", href: "/organization/goals" },
+        { label: "Board", href: "/organization/all-teams" },
+        { label: "Management", href: "/organization/management" },
+        { label: "Library", href: "/organization/library" },
+        { label: "Museum", href: "/organization/museum" },
       ]
     },
     { 
-      label: "प्रकासन", 
+      label: "Publication", 
       submenu: [
-        { label: "अनुसन्धात्मक", href: "/category" },
-        { label: "टंकप्रसादसंग सम्बन्धित", href: "/category/TPA-Related" },
-        { label: "इतिहास, रास्त्रियता लगायत अन्य", href: "/category/History-and-other" },
+        { label: "Researched Books", href: "/category" },
+        { label: "TPA Related Books", href: "/category/TPA-Related" },
+        { label: "Other Books", href: "/category/History-and-other" },
       ]
     },
     { 
-      label: "गतिविधीहरु", 
+      label: "Activities", 
       submenu: [
-        { label: "नियमित कार्यक्रम", href: "/activity" },
-        { label: "छात्रवृति र बिद्यालय भौतिक संरचना निर्माण एबम मर्मत", href: "/activity/scholarship-and-infrastructure" },
-        { label: "समसामयिक बिषयमा छलफल कार्यक्रम", href: "/activity/contemporary-discussions" },
+        { label: "Regular Program", href: "/activity" },
+        { label: "Schoolarship", href: "/activity/scholarship-and-infrastructure" },
+        { label: "Current Social Issue", href: "/activity/contemporary-discussions" },
       ]
     },
     { 
-      label: "सुचना/विज्ञप्ति", 
+      label: "Notice / Press Release", 
       submenu: [
-        { label: "विज्ञप्ति", href: "/notification" },
-        { label: "सुचना", href: "/notification/notice" },
+        { label: "Press Release", href: "/notification" },
+        { label: "Notice", href: "/notification/notice" },
         
       ]
     },
    
     { 
-      label: "ग्यालेरी", 
+      label: "Gallery", 
       submenu: [
-        { label: "फोटोहरु", href: "/gallery" },
-        { label: "भिडियोहरु", href: "/gallery/videos" },
+        { label: "Photo Collection", href: "/gallery" },
+        { label: "Video Collectiom", href: "/gallery/videos" },
   
       ]
     },
@@ -127,7 +131,7 @@ const Menu = () => {
           {/* 3. Right Side: Contact Button */}
           <div className="flex-shrink-0">
             <Link to="/contact" className="text-black border border-black hover:text-white px-6 py-2.5 font-bold hover:bg-black transition-all duration-500 shadow-md active:scale-95 inline-block">
-              सम्पर्क
+              Contact
             </Link>
           </div>
 

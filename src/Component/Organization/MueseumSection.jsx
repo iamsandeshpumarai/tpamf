@@ -1,4 +1,5 @@
 import React from 'react';
+import FoundationFooter from '../Company/FoudationFooter';
 
 const MuseumSection = () => {
   const meseumData = {
@@ -71,6 +72,7 @@ const MuseumSection = () => {
           })}
         </div>
       </div>
+      <FoundationFooter/>
     </section>
   );
 };

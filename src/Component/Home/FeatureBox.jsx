@@ -1,35 +1,36 @@
 import React from 'react';
 import { 
-  ChartBarIcon, 
-  PencilSquareIcon, 
-  ChatBubbleBottomCenterTextIcon, 
+  BuildingLibraryIcon, 
+  AcademicCapIcon, 
+  BriefcaseIcon, 
   UserGroupIcon 
 } from '@heroicons/react/24/outline';
+import { Link } from 'react-router-dom';
 
 const features = [
   {
     title: "Organizational Profile",
-    desc: "Since its establishment in 1993, the Foundation has evolved into a research and advocacy forum for leaders of various socio-political convictions.",
-    icon: <ChartBarIcon className="w-12 h-12" />,
-    link: "#"
+    desc: "A non-political Trust dedicated to carrying forward the democratic ideals of Late Tanka Prasad Acharya, focusing on national unity and social justice.",
+    icon: <BuildingLibraryIcon className="w-12 h-12" />,
+    link: "/company"
   },
   {
     title: "Workshop and Seminar",
-    desc: "We conduct public workshop and seminars to raise awareness on important social, educational, and community issues.",
-    icon: <PencilSquareIcon className="w-12 h-12" />,
-    link: "#"
+    desc: "Facilitating high-level discussions on issues of national importance, from citizenship rights to social democracy and national sovereignty.",
+    icon: <AcademicCapIcon className="w-12 h-12" />,
+    link: "/company/workshop-and-seminar"
   },
   {
     title: "Professional Rostrum",
-    desc: "Our rostrum encourages individuals to express ideas, build confidence, and contribute to meaningful social discussions.",
-    icon: <ChatBubbleBottomCenterTextIcon className="w-12 h-12" />,
-    link: "#"
+    desc: "A multi-disciplinary pool of experts specializing in Economics, Law, History, and Governance, contributing to evidence-based advocacy.",
+    icon: <BriefcaseIcon className="w-12 h-12" />,
+    link: "/company/Professional-rostrum"
   },
   {
     title: "Board and Advisory Panel",
-    desc: "Our board and advisory panel consist of committed professionals who guide our mission with integrity and vision.",
+    desc: "Governed by a distinguished assembly of trustees and professionals committed to preserving democratic values and people's rights.",
     icon: <UserGroupIcon className="w-12 h-12" />,
-    link: "#"
+    link: "/company/current-board-and-advisory-panel-members"
   }
 ];
 
@@ -74,8 +75,8 @@ const FeaturedBoxes = () => {
 
               {/* Read More Link */}
               <div className="mt-auto">
-                <a 
-                  href={item.link} 
+                <Link 
+                  to={item.link} 
                   className="text-xs font-bold text-[#212529] uppercase tracking-wider inline-flex items-center group/btn hover:text-[#273a83] transition-colors"
                 >
                   Read More
@@ -87,7 +88,7 @@ const FeaturedBoxes = () => {
                   >
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
-                </a>
+                </Link>
               </div>
             </div>
           ))}

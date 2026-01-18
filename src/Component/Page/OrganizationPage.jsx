@@ -3,6 +3,7 @@ import BasicIntro from '../Reusable/BasicIntro'
 import ManagementSection from '../Organization/ManagementSection'
 import FeaturedBoxes from '../Home/FeatureBox'
 import { useLocation } from 'react-router-dom'
+import FoundationFooter from '../Company/FoudationFooter'
 
 const OrganizationPage = () => {
     const {pathname} = useLocation();
@@ -59,15 +60,16 @@ if(element){
     }
   return (
     <div className='scroll-smooth'>
-        <div id='management'>
+        <div id='introduction'>
             <BasicIntro data={organizationData}/>
         </div>
       <div id="goals">
         <BasicIntro data={goalData} reverse={true}/>
       </div>
-      <div id='all-teams'>
+      <div id='management'>
 <ManagementSection data={managemenetData}/>
       </div>
+      <FoundationFooter/>
     </div>
   )
 }

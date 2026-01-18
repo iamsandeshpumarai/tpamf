@@ -1,10 +1,10 @@
 import React from 'react';
 import { Facebook, Twitter, Instagram, Calendar, ChevronRight, Mail, MapPin, Phone } from 'lucide-react';
 import backgroundImage from '../assets/images/download.jpg';
-import recentPost1 from '../assets/images/blog/01.jpg';
-import recentPost2 from '../assets/images/blog/02.jpg';
+import { useNavigate } from 'react-router-dom';
 
 const Footer = () => {
+ const navigate =  useNavigate()
   const quickLinks = [
     { name: "हाम्रो बारेमा", link: "/" },
     { name: "उद्देश्य", link: "/organization/goals" },
@@ -30,9 +30,9 @@ const Footer = () => {
   ];
 
   const socialLinks = [
-    { icon: <Facebook size={18} />, name: 'Facebook', color: '#1877F2' },
-    { icon: <Twitter size={18} />, name: 'Twitter', color: '#1DA1F2' },
-    { icon: <Instagram size={18} />, name: 'Instagram', color: '#E4405F' }
+    { icon: <Facebook size={18} />, name: 'Facebook', color: '#1877F2',link:"https://www.facebook.com/tpamf.baneshwor/" },
+    { icon: <Twitter size={18} />, name: 'Twitter', color: '#1DA1F2',link:"https://x.com/Tanka_memorial" },
+    { icon: <Instagram size={18} />, name: 'Instagram', color: '#E4405F',link:"https://instagram.com" }
   ];
 
   return (
@@ -63,7 +63,8 @@ const Footer = () => {
                 {socialLinks.map((social, i) => (
                   <div key={i} className="group relative flex flex-col items-center">
                     <a
-                      href="#"
+                      href={social.link}
+                      target='_blank'
                       className="w-11 h-11 rounded-full border border-white/20 flex items-center justify-center hover:bg-[#273a83] hover:border-[#273a83] transition-all duration-300 text-white hover:shadow-[0_0_15px_rgba(39,58,131,0.5)]"
                     >
                       {social.icon}
@@ -103,19 +104,19 @@ const Footer = () => {
                   <div className="w-8 h-8 rounded bg-white/5 flex items-center justify-center shrink-0">
                     <MapPin size={16} className="text-[#273a83]" />
                   </div>
-                  <span>Kathmandu, Nepal</span>
+                  <span>कुपन्डोल, काठमाडौँ</span>
                 </li>
                 <li className="flex items-start gap-4">
                   <div className="w-8 h-8 rounded bg-white/5 flex items-center justify-center shrink-0">
                     <Phone size={16} className="text-[#273a83]" />
                   </div>
-                  <span>+977 1-XXXXXXX</span>
+                  <span>+९७७ ०१ ५४२२६७९</span>
                 </li>
                 <li className="flex items-start gap-4">
                   <div className="w-8 h-8 rounded bg-white/5 flex items-center justify-center shrink-0">
                     <Mail size={16} className="text-[#273a83]" />
                   </div>
-                  <span>info@tpa.org.np</span>
+                  <span>tpamf93@gmail.com</span>
                 </li>
               </ul>
             </div>
@@ -137,9 +138,11 @@ const Footer = () => {
                       <span className="text-[10px] uppercase font-bold text-[#273a83] flex items-center mb-1">
                         <Calendar size={12} className="mr-1" /> {post.date}
                       </span>
-                      <a href="#" className="text-xs text-white/80 hover:text-white font-medium leading-tight block truncate group-hover:text-clip group-hover:whitespace-normal transition-all">
+                      <span onClick={()=>{
+                        navigate(`/activity/activities/${encodeURIComponent(post.title)}`)
+                      }} className="text-xs  cursor-pointer text-white/80 hover:text-white font-medium leading-tight block truncate group-hover:text-clip group-hover:whitespace-normal transition-all duration-75">
                         {post.title}
-                      </a>
+                      </span>
                     </div>
                   </li>
                 ))}

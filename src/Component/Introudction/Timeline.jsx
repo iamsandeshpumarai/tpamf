@@ -43,21 +43,21 @@ const Timeline = () => {
 
   useEffect(() => {
     itemsRef.current.forEach((item, index) => {
-      const isEven = index % 2 === 0;
+      if (!item) return;
       
       gsap.fromTo(item, 
         { 
           opacity: 0, 
-          x: isEven ? -80 : 80 // Even items slide from left, Odd from right
+          y: 50 
         },
         {
           opacity: 1,
-          x: 0,
-          duration: 1.2,
-          ease: "expo.out",
+          y: 0,
+          duration: 1,
+          ease: "power2.out",
           scrollTrigger: {
             trigger: item,
-            start: "top 80%",
+            start: "top 85%",
             toggleActions: "play none none reverse"
           }
         }
@@ -69,13 +69,13 @@ const Timeline = () => {
     <div 
       className="min-h-screen bg-fixed bg-cover bg-center py-20 px-4 font-sans"
       style={{ 
-        backgroundImage: `linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url('https://tpamf.org.np/assets/tpbanner1-TOQj9Mr-.jpg')` 
+        backgroundImage: `linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('https://tpamf.org.np/assets/tpbanner1-TOQj9Mr-.jpg')` 
       }}
     >
       <div className="max-w-6xl mx-auto relative">
         
         {/* Center Line */}
-        <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-yellow-500/50 hidden md:block"></div>
+        <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-yellow-500/30 hidden md:block"></div>
 
         {dateData.map((item, index) => {
           const isEven = index % 2 === 0;
@@ -83,20 +83,13 @@ const Timeline = () => {
             <div 
               key={index} 
               ref={el => itemsRef.current[index] = el}
-              className={`mb-16 flex flex-col md:flex-row items-center w-full ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'}`}
+              className={`mb-24 flex flex-col md:flex-row items-center w-full ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'}`}
             >
-              {/* Content Side */}
+              {/* Text Side */}
               <div className="w-full md:w-5/12">
-                <div className={`bg-black/40 backdrop-blur-md p-6 rounded-2xl border border-white/10 shadow-2xl ${isEven ? 'md:text-right' : 'md:text-left'}`}>
-                  <span className="text-yellow-500 font-bold text-2xl mb-2 block">{item.date}</span>
+                <div className={`bg-black/40 backdrop-blur-md p-8 rounded-2xl border border-white/10 shadow-2xl ${isEven ? 'md:text-right' : 'md:text-left'}`}>
+                  <span className="text-yellow-500 font-bold text-3xl mb-2 block">{item.date}</span>
                   <h3 className="text-white text-xl font-bold mb-3 leading-tight">{item.event}</h3>
-                  <div className="overflow-hidden rounded-xl mb-4 h-48">
-                    <img 
-                      src={item.img} 
-                      alt={item.event} 
-                      className="w-full h-full object-cover transform hover:scale-110 transition-transform duration-700"
-                    />
-                  </div>
                   <p className="text-gray-300 text-sm md:text-base leading-relaxed">
                     {item.Desc}
                   </p>
@@ -104,12 +97,20 @@ const Timeline = () => {
               </div>
 
               {/* Center Dot */}
-              <div className="relative flex items-center justify-center w-full md:w-2/12 my-4 md:my-0">
-                <div className="h-6 w-6 rounded-full bg-yellow-500 border-4 border-gray-900 z-10 shadow-[0_0_15px_rgba(234,179,8,0.5)]"></div>
+              <div className="relative flex items-center justify-center w-full md:w-2/12 my-8 md:my-0">
+                <div className="h-6 w-6 rounded-full bg-yellow-500 border-4 border-gray-900 z-10 shadow-[0_0_15px_rgba(234,179,8,0.8)]"></div>
               </div>
 
-              {/* Empty Side (Spacer) */}
-              <div className="hidden md:block md:w-5/12"></div>
+              {/* Image Side (Now opposite the text) */}
+              <div className="w-full md:w-5/12">
+                <div className="overflow-hidden rounded-2xl shadow-2xl border border-white/5 h-64 w-full">
+                  <img 
+                    src={item.img} 
+                    alt={item.event} 
+                    className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
+                  />
+                </div>
+              </div>
             </div>
           );
         })}

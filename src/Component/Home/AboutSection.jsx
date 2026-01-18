@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const AboutSection = () => {
   const aboutData = {
@@ -69,8 +70,8 @@ const AboutSection = () => {
 
               {/* Enhanced Action Button */}
               <div className="mt-12">
-                <button className="group relative inline-flex items-center justify-center px-10 py-5 font-bold text-white transition-all duration-300 bg-[#273a83] rounded-sm hover:bg-[#1a285d] shadow-2xl overflow-hidden w-full sm:w-auto">
-                  <span className="relative z-10 uppercase tracking-[0.2em] text-sm">Read Detailed History</span>
+                <button  className="group relative inline-flex items-center justify-center px-10 py-5 font-bold text-white transition-all duration-300 bg-[#273a83] rounded-sm hover:bg-[#1a285d] shadow-2xl overflow-hidden w-full sm:w-auto">
+                  <span className="relative z-10 uppercase tracking-[0.2em] text-sm"> <Link to='/tankaprasadacharya'>Read Detailed History</Link> </span>
                   <div className="absolute inset-0 -translate-x-full group-hover:translate-x-0 transition-transform duration-300 bg-[#1a285d]"></div>
                   <svg 
                     className="relative z-10 w-6 h-6 ml-3 transition-transform duration-300 group-hover:translate-x-2" 

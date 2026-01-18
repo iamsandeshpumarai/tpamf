@@ -1,3 +1,4 @@
+import FoundationFooter from "../Company/FoudationFooter"
 import BasicIntro from "../Reusable/BasicIntro"
 
 const LibrarySection = () => {
@@ -11,6 +12,7 @@ const LibrarySection = () => {
   return (
     <div>
 <BasicIntro data={libraryData}/>
+<FoundationFooter/>
     </div>
   )
 }

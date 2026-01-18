@@ -2,7 +2,7 @@ import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Navigation, Pagination } from 'swiper/modules';
 import { ArrowRight, ExternalLink } from 'lucide-react';
-
+import { Link } from 'react-router-dom';
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -53,9 +53,9 @@ const Boardoftrusty = () => {
           </div>
           
           {/* 1. View All Member at the right side */}
-          <div className="mt-6 md:mt-0" onClick={()=>{navigate('/organization/all-teams')}} >
+          <div className="mt-6 md:mt-0" >
             <button className="flex items-center gap-2 text-[#273a83] font-bold hover:gap-4 transition-all duration-300 group">
-              View All Members <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+             <Link to='/organization/all-teams'>View All Members</Link>  <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
             </button>
           </div>
         </div>
@@ -100,7 +100,7 @@ const Boardoftrusty = () => {
                     {/* View Profile Hover Overlay */}
                     <div className="absolute inset-0 bg-[#273a83]/70 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center">
                       <button className="px-5 py-2.5 bg-white text-[#273a83] rounded-lg font-bold text-xs flex items-center gap-2 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 shadow-xl hover:bg-gray-100">
-                        View Profile <ExternalLink size={14} />
+                    <Link to='/organization/all-teams' >View Profile</Link>   <ExternalLink size={14} />
                       </button>
                     </div>
                   </div>
