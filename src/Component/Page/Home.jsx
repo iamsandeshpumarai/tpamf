@@ -13,11 +13,12 @@ import FooterInfoBar from '../FooterBarInfo';
 import NewsletterSubscription from '../Home/Newsletter';
 import BoardOfTrusty from '../Home/Boardoftrusty';
 import ExecutiveBoardSection from '../Home/ExecutiveBoard';
+import LoadingScreen from '../Loading.jsx';
 
 const Home = () => {
   const [showNotice, setShowNotice] = useState(false);
 const [isExiting,setIsExiting] = useState(false)
-
+const [showLoader,changeLoader] = useState(true)
   useEffect(() => {
     const hasSeenNotice = localStorage.getItem('hasSeenNotice')
     if(!hasSeenNotice){
@@ -26,7 +27,11 @@ const [isExiting,setIsExiting] = useState(false)
       }, 900);
       return ()=> clearTimeout(timer) 
     }
+const loaderTimer = setTimeout(() => {
+    changeLoader(false);
+  }, 300); 
 
+  return () => clearTimeout(loaderTimer); // Correct cleanup
   }, []);
 
   const closeNotice = () => {
@@ -36,7 +41,7 @@ const [isExiting,setIsExiting] = useState(false)
       localStorage.setItem('hasSeenNotice','true')
     }, 300);
   }
-
+if(showLoader) return <LoadingScreen/>
   return (
    <div style={{ position: 'relative' }}>
       <style>

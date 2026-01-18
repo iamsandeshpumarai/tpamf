@@ -42,6 +42,7 @@ import OrganizationalProfile from "./Component/Company/OrganizationalProfile"
 import WorkshopTable from "./Component/Company/Workshopandseminar"
 import ProfessionalRostrum from "./Component/Company/ProfessionalRostrum"
 import BoardMembers from "./Component/Company/Currentboardandadvisory"
+import LoadingScreen from "./Component/Loading"
 
 
 const App = () => {
@@ -118,6 +119,8 @@ const App = () => {
 <Route path='current-board-and-advisory-panel-members' element={<BoardMembers/>} />
 
 </Route>
+
+<Route path='/loading' element={<LoadingScreen/>}/>
     </Routes>
     <Footer/>
     </>

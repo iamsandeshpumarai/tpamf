@@ -1,5 +1,5 @@
 import React from 'react'
-import imageLogo from '../assets/images/logo.png'
+import imageLogo from '../assets/FoudationLogo/foundationheaderlogo.jpeg'
 import headerPicture from '../assets/images/header-right-img.jpg'
 import './Header.css'
 import { useNavigate } from 'react-router-dom'
