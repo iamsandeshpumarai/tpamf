@@ -29,7 +29,7 @@ const [showLoader,changeLoader] = useState(true)
     }
 const loaderTimer = setTimeout(() => {
     changeLoader(false);
-  }, 300); 
+  }, 400); 
 
   return () => clearTimeout(loaderTimer); // Correct cleanup
   }, []);
