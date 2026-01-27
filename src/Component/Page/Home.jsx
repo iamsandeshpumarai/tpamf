@@ -19,20 +19,28 @@ const Home = () => {
   const [showNotice, setShowNotice] = useState(false);
 const [isExiting,setIsExiting] = useState(false)
 const [showLoader,changeLoader] = useState(true)
-  useEffect(() => {
-    const hasSeenNotice = localStorage.getItem('hasSeenNotice')
-    if(!hasSeenNotice){
-      const timer =  setTimeout(() => {
-        setShowNotice(true)
-      }, 900);
-      return ()=> clearTimeout(timer) 
-    }
-const loaderTimer = setTimeout(() => {
-    changeLoader(false);
-  }, 400); 
+useEffect(() => {
+  let noticeTimer = null;
+  let loaderTimer = null;
 
-  return () => clearTimeout(loaderTimer); // Correct cleanup
-  }, []);
+  const hasSeenNotice = localStorage.getItem('hasSeenNotice');
+
+  if (!hasSeenNotice) {
+    noticeTimer = setTimeout(() => {
+      setShowNotice(true);
+    }, 900);
+  }
+
+  loaderTimer = setTimeout(() => {
+    changeLoader(false);
+  }, 400);
+
+  return () => {
+    if (noticeTimer) clearTimeout(noticeTimer);
+    if (loaderTimer) clearTimeout(loaderTimer);
+  };
+}, []);
+
 
   const closeNotice = () => {
     setIsExiting(true)
