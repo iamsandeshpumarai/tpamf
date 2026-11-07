@@ -1,6 +1,6 @@
 import React from 'react'
 import imageLogo from '../assets/FoudationLogo/foundationheaderlogo.jpeg'
-import headerPicture from '../assets/images/header-right-img.jpg'
+import headerPicture from '../assets/images/tankaprasadacharya.jpg'
 import './Header.css'
 import { useNavigate } from 'react-router-dom'
 const Header = () => {
@@ -16,7 +16,7 @@ const Header = () => {
 
             {/* 2. Headline - Added whitespace-nowrap to prevent text jumping to next line */}
             <div className='headline text-center mx-4 gap-2 flex flex-col '>
-                <h4 className='text-[#0B0C26] font-semibold sm:text-2xl text-lg'>टंकप्रसाद आचार्य स्मृति प्रतिष्ठान</h4>
+                <h4 className='text-[#273A83] font-semibold sm:text-2xl text-lg'>टंकप्रसाद आचार्य स्मृति प्रतिष्ठान</h4>
                 <h2 className='text-[#273A83] font-semibold md:text-xl lg:text-3xl text-lg '>Tanka Prasad Acharya Memorial Foundation</h2>
             </div>
 
