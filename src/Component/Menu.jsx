@@ -30,8 +30,8 @@ const Menu = () => {
         { label: "Goal", href: "/organization/goals" },
         { label: "Board", href: "/organization/all-teams" },
         { label: "Management", href: "/organization/management" },
-        { label: "Library", href: "/organization/library" },
-        { label: "Museum", href: "/organization/museum" },
+        // { label: "Library", href: "/organization/library" },
+        // { label: "Museum", href: "/organization/museum" },
       ]
     },
     { 
@@ -93,7 +93,7 @@ const Menu = () => {
             <ul className="flex space-x-8 text-[#212529] h-full">
               {NAV_DATA.map((item, idx) => (
                 <li key={idx} className="relative group h-full flex items-center">
-                  <div className="flex items-center px-1 cursor-pointer group-hover:text-[#193283] transition-colors duration-300 font-bold text-[14px]">
+                  <div className="flex items-center px-1 cursor-pointer text-[#193283] transition-colors duration-300 font-bold text-[14px]">
                     {item.submenu ? (
                       <span className="flex items-center">
                         {item.label}
